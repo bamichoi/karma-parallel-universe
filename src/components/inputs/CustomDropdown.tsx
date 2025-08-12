@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import styled from "styled-components";
 
 interface Option {
@@ -16,20 +16,23 @@ interface CustomDropdownProps {
   onClose: () => void;
 }
 
-const CustomDropdown = ({ 
-  options, 
-  selectedValue, 
-  onSelect, 
+const CustomDropdown = ({
+  options,
+  selectedValue,
+  onSelect,
   placeholder,
   isOpen,
   onToggle,
-  onClose
+  onClose,
 }: CustomDropdownProps) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         onClose();
       }
     };
@@ -43,7 +46,9 @@ const CustomDropdown = ({
     };
   }, [isOpen, onClose]);
 
-  const selectedOption = options.find(option => option.value === selectedValue);
+  const selectedOption = options.find(
+    (option) => option.value === selectedValue
+  );
 
   const handleOptionClick = (value: string) => {
     onSelect(value);
@@ -58,10 +63,10 @@ const CustomDropdown = ({
         </SelectedText>
         <ArrowIcon $isOpen={isOpen}>▼</ArrowIcon>
       </DropdownTrigger>
-      
+
       {isOpen && (
         <DropdownMenu>
-          {options.map(option => (
+          {options.map((option) => (
             <DropdownOption
               key={option.value}
               onClick={() => handleOptionClick(option.value)}
@@ -109,7 +114,9 @@ const DropdownTrigger = styled.div<{ $isOpen: boolean }>`
     background: rgba(30, 41, 59, 0.8);
   }
 
-  ${props => props.$isOpen && `
+  ${(props) =>
+    props.$isOpen &&
+    `
     border-color: #8b5cf6;
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
     background: rgba(30, 41, 59, 0.8);
@@ -117,14 +124,14 @@ const DropdownTrigger = styled.div<{ $isOpen: boolean }>`
 `;
 
 const SelectedText = styled.span<{ $hasValue: boolean }>`
-  color: ${props => props.$hasValue ? '#f1f5f9' : '#94a3b8'};
+  color: ${(props) => (props.$hasValue ? "#f1f5f9" : "#94a3b8")};
 `;
 
 const ArrowIcon = styled.span<{ $isOpen: boolean }>`
   color: #8b5cf6;
   font-size: 0.75rem;
   transition: transform 0.2s ease;
-  transform: ${props => props.$isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+  transform: ${(props) => (props.$isOpen ? "rotate(180deg)" : "rotate(0deg)")};
 `;
 
 const DropdownMenu = styled.div`
@@ -160,8 +167,9 @@ const DropdownOption = styled.div<{ $isSelected: boolean }>`
   font-family: "Noto Serif KR", serif;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: ${props => props.$isSelected ? 'rgba(139, 92, 246, 0.2)' : 'transparent'};
-  
+  background: ${(props) =>
+    props.$isSelected ? "rgba(139, 92, 246, 0.2)" : "transparent"};
+
   &:hover {
     background: rgba(139, 92, 246, 0.3);
     color: #a78bfa;
@@ -171,7 +179,9 @@ const DropdownOption = styled.div<{ $isSelected: boolean }>`
     border-bottom: 1px solid rgba(139, 92, 246, 0.1);
   }
 
-  ${props => props.$isSelected && `
+  ${(props) =>
+    props.$isSelected &&
+    `
     color: #a78bfa;
     font-weight: 500;
   `}

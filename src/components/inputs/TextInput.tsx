@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
-import { UniverseFormData } from "../../types/form";
+import type { UniverseFormData } from "../../types/form";
 
 interface TextInputProps {
   name: keyof UniverseFormData;
@@ -11,13 +11,13 @@ interface TextInputProps {
   type?: "text" | "email" | "tel" | "url";
 }
 
-const TextInput = ({ 
-  name, 
-  label, 
-  placeholder, 
-  required = false, 
+const TextInput = ({
+  name,
+  label,
+  placeholder,
+  required = false,
   id,
-  type = "text"
+  type = "text",
 }: TextInputProps) => {
   const {
     register,

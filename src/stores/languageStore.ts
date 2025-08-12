@@ -19,9 +19,9 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
 // Load language from localStorage or default to Korean
 const getInitialLanguage = (): Language => {
   if (typeof window === "undefined") return "ko";
-  
+
   const saved = localStorage.getItem("selectedLanguage");
-  if (saved && SUPPORTED_LANGUAGES.some(lang => lang.code === saved)) {
+  if (saved && SUPPORTED_LANGUAGES.some((lang) => lang.code === saved)) {
     return saved as Language;
   }
   return "ko";
@@ -31,18 +31,18 @@ const getInitialLanguage = (): Language => {
 export const languageAtom = atom<Language>(getInitialLanguage());
 
 // Atom to handle language changes with localStorage persistence
-export const setLanguageAtom = atom(
-  null,
-  (get, set, newLanguage: Language) => {
-    set(languageAtom, newLanguage);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("selectedLanguage", newLanguage);
-    }
+export const setLanguageAtom = atom(null, (_, set, newLanguage: Language) => {
+  set(languageAtom, newLanguage);
+  if (typeof window !== "undefined") {
+    localStorage.setItem("selectedLanguage", newLanguage);
   }
-);
+});
 
 // Helper atom to get current language option
 export const currentLanguageOptionAtom = atom<LanguageOption>((get) => {
   const currentLang = get(languageAtom);
-  return SUPPORTED_LANGUAGES.find(lang => lang.code === currentLang) || SUPPORTED_LANGUAGES[0];
+  return (
+    SUPPORTED_LANGUAGES.find((lang) => lang.code === currentLang) ||
+    SUPPORTED_LANGUAGES[0]
+  );
 });

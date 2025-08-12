@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
-import { UniverseFormData } from "../../types/form";
+import type { UniverseFormData } from "../../types/form";
 
 interface TextAreaInputProps {
   name: keyof UniverseFormData;
@@ -34,11 +34,11 @@ const TextAreaInput = ({
         id={fieldId}
         placeholder={placeholder}
         {...register(name, {
-          required: required ? `${label}D �%t�8�` : false,
+          required: required ? `${label}를 입력해주세요` : false,
           minLength: minLength
             ? {
                 value: minLength,
-                message: `\� ${minLength}� t� �%t�8�`,
+                message: `최소 ${minLength}글자 이상 입력해주세요`,
               }
             : undefined,
         })}

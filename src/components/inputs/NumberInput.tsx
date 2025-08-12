@@ -1,6 +1,6 @@
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
-import { UniverseFormData } from "../../types/form";
+import type { UniverseFormData } from "../../types/form";
 
 interface NumberInputProps {
   name: keyof UniverseFormData;

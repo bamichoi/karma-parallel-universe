@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
-import { UniverseFormData } from "../../types/form";
+import type { UniverseFormData } from "../../types/form";
 import CustomCalendar from "./CustomCalendar";
 
 interface DateInputProps {
@@ -12,7 +12,13 @@ interface DateInputProps {
   maxDate?: string;
 }
 
-const DateInput = ({ name, label, required = false, id, maxDate }: DateInputProps) => {
+const DateInput = ({
+  name,
+  label,
+  required = false,
+  id,
+  maxDate,
+}: DateInputProps) => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
   const {
     register,
@@ -32,7 +38,9 @@ const DateInput = ({ name, label, required = false, id, maxDate }: DateInputProp
   const formatDisplayDate = (dateString: string) => {
     if (!dateString) return "";
     const date = new Date(dateString);
-    return `${date.getFullYear()}년 ${date.getMonth() + 1}월 ${date.getDate()}일`;
+    return `${date.getFullYear()}년 ${
+      date.getMonth() + 1
+    }월 ${date.getDate()}일`;
   };
 
   return (
@@ -50,9 +58,7 @@ const DateInput = ({ name, label, required = false, id, maxDate }: DateInputProp
             required: required ? `${label}을 입력해주세요` : false,
           })}
         />
-        <CalendarIcon onClick={() => setIsCalendarOpen(true)}>
-          📅
-        </CalendarIcon>
+        <CalendarIcon onClick={() => setIsCalendarOpen(true)}>📅</CalendarIcon>
         <CustomCalendar
           selectedDate={selectedDate}
           onDateSelect={handleDateSelect}

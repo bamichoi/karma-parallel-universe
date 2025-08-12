@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
-import { UniverseFormData } from "../../types/form";
+import type { UniverseFormData } from "../../types/form";
 import CustomDropdown from "./CustomDropdown";
 
 interface Option {
@@ -80,7 +80,6 @@ const Label = styled.label`
   font-size: 0.875rem;
   margin-bottom: 0.5rem;
 `;
-
 
 const ErrorMessage = styled.span`
   color: #ef4444;

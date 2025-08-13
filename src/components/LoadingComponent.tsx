@@ -7,10 +7,10 @@ const LoadingComponent = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
 
   const loadingMessages = [
-    "과거 회귀 시작. 분기점을 탐색 중…",
-    "분기점 발견. 평행 세계로 진입중…",
-    "또 다른 당신을 찾는 중…",
-    "대상 확인. 현재로 거슬러 올라가는 중…",
+    "분기점을 탐색 중…",
+    "또 다른 평행세계로 진입중…",
+    "또 다른 당신을 추적 중…",
+    "확인. 목표 관측 시작...",
   ];
 
   const handleMessageComplete = () => {

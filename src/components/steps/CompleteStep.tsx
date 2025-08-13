@@ -80,7 +80,7 @@ const CompleteStep = ({ onPrev }: CompleteStepProps) => {
           수정
         </Button>
         <Button type="button" onClick={handleSubmit(onSubmit)}>
-          평행우주 진입
+          카르마와 평행우주 진입
         </Button>
       </ButtonContainer>
     </StepContainer>

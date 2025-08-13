@@ -17,7 +17,7 @@ const UniverseForm = () => {
   const isLoading = useAtomValue(isLoadingAtom);
 
   const methods = useForm<UniverseFormData>({
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const nextStep = () => {
@@ -79,7 +79,7 @@ const UniverseForm = () => {
               $isActive={currentStep === "complete"}
               $isCompleted={completedSteps.has("complete")}
             >
-              3. 준비 완료
+              3. 평행우주 진입
             </ProgressStep>
           </ProgressBar>
         )}

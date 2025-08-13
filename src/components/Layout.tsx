@@ -14,6 +14,7 @@ const Layout = () => {
         <MainContent>
           <Outlet />
         </MainContent>
+        <Footer>© 2025 Beomseok Choi, All rights reserved.</Footer>
       </MobileContainer>
     </Container>
   );
@@ -44,4 +45,12 @@ const MainContent = styled.main`
   overflow-y: auto;
   padding: 2rem;
   color: #e2e8f0;
+`;
+
+const Footer = styled.footer`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 0.5rem;
+  padding: 0.5rem;
 `;

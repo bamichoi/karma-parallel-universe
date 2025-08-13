@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notoserifkr/v29/3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOnci4eM52.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notoserifkr/v29/3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOncjmeM52.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notoserifkr/v29/3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOncjUeM52.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notoserifkr/v29/3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOncg4f852.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Noto Serif KR';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/notoserifkr/v29/3JnoSDn90Gmq2mr3blnHaTZXbOtLJDvui3JOncgBf852.ttf) format('truetype');
+}

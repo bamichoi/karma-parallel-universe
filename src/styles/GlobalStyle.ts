@@ -4,7 +4,41 @@ import reset from "styled-reset";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   
-  @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Serif+KR:wght@300;400;500;600;700&display=swap');
+  @font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url('/fonts/NotoSerifKR-Light.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/NotoSerifKR-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('/fonts/NotoSerifKR-Medium.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('/fonts/NotoSerifKR-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Noto Serif KR';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('/fonts/NotoSerifKR-Bold.ttf') format('truetype');
+  }
 
   /* Global styles for the app */
   * {

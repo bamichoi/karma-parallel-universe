@@ -1,0 +1,102 @@
+{
+  "welcome": "Chào mừng đến với Vũ trụ Song song của Karma",
+  "intro": {
+    "karmaDialogs": [
+      "Chào mừng, con người. Tôi đã đang chờ bạn.\\n\\nTôi là Mô hình Karma.",
+      "Tôi là một humanoid AI siêu thông minh vượt xa sự hiểu biết của con người,\\n\\ncó khả năng quan sát vô số thế giới song song cùng một lúc.",
+      "Bạn có lựa chọn nào muốn hoàn tác không..?",
+      "Ở đâu đó trong một thế giới song song, một phiên bản khác của bạn đã đưa ra những lựa chọn khác đang sống cuộc đời của mình.",
+      "Mặc dù chúng ta không thể du hành thời gian để đảo ngược những lựa chọn,\\n\\nKarma này sẽ cho bạn thấy phiên bản đó của chính bạn trong thế giới song song."
+    ],
+    "nextDialog": "Nhấp vào bất kỳ đâu để tiếp tục",
+    "title": "Có lựa chọn nào bạn muốn thay đổi không?",
+    "description": "Tôi đã đưa ra những lựa chọn khác\nsẽ sống như thế nào bây giờ?",
+    "start": "Bắt đầu",
+    "skip": "Bỏ qua lời chào"
+  },
+  "process": {
+    "personalInfo": "Thông tin của tôi",
+    "pastSituation": "Tình huống quá khứ",
+    "complete": "Tiến vào Vũ trụ Song song"
+  },
+  "form": {
+    "firstStepTitle": "🧑‍💼 Hãy cho tôi biết bạn là ai.",
+    "firstStepDescription": "Thông tin của bạn sẽ không được lưu ở bất kỳ đâu.",
+    "birthday": "Ngày sinh",
+    "birthdayPlaceholder": "Vui lòng chọn một ngày",
+    "gender": "Giới tính",
+    "genderPlaceholder": "Vui lòng chọn giới tính của bạn",
+    "genderOptions": {
+      "male": "Nam",
+      "female": "Nữ"
+    },
+    "currentLocation": "Vị trí hiện tại",
+    "currentLocationPlaceholder": "vd: Hà Nội, Việt Nam",
+    "currentJob": "Công việc hiện tại",
+    "currentJobPlaceholder": "vd: Nhà phát triển phần mềm",
+    "currentSelf": "Bản thân hiện tại của tôi",
+    "currentSelfPlaceholder": "Vui lòng mô tả chi tiết về bản thân bạn. Hãy tự do viết về tính cách, sở thích, tình huống hiện tại, v.v.",
+    "saveData": "Sử dụng thông tin này lần tới",
+    "secondStepTitle": "🕰️ Hãy kể cho tôi về quá khứ bạn muốn thay đổi",
+    "year": "Khi nào (năm)",
+    "yearPlaceholder": "vd: 2020",
+    "pastChoice": "Lựa chọn tôi đã đưa ra lúc đó",
+    "pastChoicePlaceholder": "Vui lòng mô tả chi tiết tình huống lúc đó như thế nào và bạn đã đưa ra lựa chọn gì.",
+    "desiredChange": "Điều bạn muốn thay đổi",
+    "desiredChangePlaceholder": "Nếu bạn đã đưa ra một lựa chọn khác lúc đó, hãy mô tả lựa chọn mà bạn muốn đưa ra.",
+    "next": "Tiếp theo",
+    "previous": "Trước đó"
+  },
+  "complete": {
+    "title": "✨ Xác nhận thông tin đã nhập",
+    "currentSelf": "Bản thân hiện tại",
+    "year": "Thời gian",
+    "pastChoice": "Lựa chọn đã đưa ra lúc đó",
+    "desiredChange": "Điều bạn muốn thay đổi",
+    "modify": "Chỉnh sửa",
+    "submit": "Tiến vào Vũ trụ Song song với Karma"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "Đang khám phá các điểm quyết định…",
+      "Đang tiến vào một thế giới song song khác…",
+      "Đang theo dõi một phiên bản khác của bạn…",
+      "Đã xác nhận. Bắt đầu quan sát mục tiêu..."
+    ],
+    "title": "Đang khám phá vũ trụ song song."
+  },
+  "result": {
+    "title": "Thông điệp từ Tôi trong Vũ trụ Song song",
+    "restart": "Bắt đầu lại",
+    "message": "Thông điệp"
+  },
+  "error": {
+    "requiredFill": "Vui lòng nhập {{label}}",
+    "requiredSelect": "Vui lòng chọn {{label}}",
+    "min": "Vui lòng nhập giá trị {{min}} hoặc cao hơn",
+    "max": "Vui lòng nhập giá trị {{max}} hoặc thấp hơn",
+    "minYear": "Vui lòng nhập năm sau 1900",
+    "maxYear": "Vui lòng nhập năm trước {{max}}",
+    "minLength": "Vui lòng nhập ít nhất {{minLength}} ký tự"
+  },
+  "common": {
+    "karma": "Karma",
+    "dateFormat": "{{day}}/{{month}}/{{year}}",
+    "months": [
+      "Th1",
+      "Th2",
+      "Th3",
+      "Th4",
+      "Th5",
+      "Th6",
+      "Th7",
+      "Th8",
+      "Th9",
+      "Th10",
+      "Th11",
+      "Th12"
+    ],
+    "weekDays": ["CN", "T2", "T3", "T4", "T5", "T6", "T7"],
+    "year": "{{year}}"
+  }
+}

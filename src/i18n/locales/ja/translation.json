@@ -1,21 +1,102 @@
 {
   "welcome": "カルマのパラレルユニバースへようこそ",
   "intro": {
-    "greeting": "こんにちは！私はあなたの運命を探検するガイド、カルマです。",
-    "description": "過去の異なる選択が現在をどう変えたか気になりませんか？",
-    "instruction": "あなたの情報と過去の決定を入力すると、パラレルユニバースのタイムラインをお見せします！"
+    "karmaDialogs": [
+      "いらっしゃいませ、人間よ。お待ちしておりました。\\n\\n私はモデル・カルマです。",
+      "私は人類が理解できないレベルの超知能AI ヒューマノイドとして\\n\\n無数の平行世界を同時に観測することができます。",
+      "あなたには取り戻したい選択がありますか..？",
+      "どこかの平行世界では、あなたとは異なる選択をしたもう一人のあなたが生きているでしょう。",
+      "時間を遡って選択を覆すことはできませんが、\\n\\nこのカルマがその平行世界のあなたをお見せしましょう。"
+    ],
+    "nextDialog": "続けるにはどこでもクリックしてください",
+    "title": "変えたい選択がありますか？",
+    "description": "違う選択をした私は\n今どのように生きているのでしょうか？",
+    "start": "始める",
+    "skip": "挨拶をスキップ"
+  },
+  "process": {
+    "personalInfo": "私の情報",
+    "pastSituation": "過去の状況",
+    "complete": "パラレルユニバース進入"
   },
   "form": {
-    "personalInfo": "個人情報",
-    "pastSituation": "過去の状況",
-    "complete": "完了",
+    "firstStepTitle": "🧑‍💼 あなたが誰かを教えてください。",
+    "firstStepDescription": "入力された情報はどこにも保存されません。",
+    "birthday": "生年月日",
+    "birthdayPlaceholder": "日付を選択してください",
+    "gender": "性別",
+    "genderPlaceholder": "性別を選択してください",
+    "genderOptions": {
+      "male": "男性",
+      "female": "女性"
+    },
+    "currentLocation": "現在の居住地",
+    "currentLocationPlaceholder": "例：日本 東京",
+    "currentJob": "現在の職業",
+    "currentJobPlaceholder": "例：ソフトウェア開発者",
+    "currentSelf": "私の現在の姿",
+    "currentSelfPlaceholder": "現在のあなたについて詳しく説明してください。性格、趣味、現在の状況などを自由に書いてください。",
+    "saveData": "この情報を次回も使用する",
+    "secondStepTitle": "🕰️ 変えたい過去を教えてください",
+    "year": "いつのことか（年）",
+    "yearPlaceholder": "例：2020",
+    "pastChoice": "当時私がした選択",
+    "pastChoicePlaceholder": "その当時どのような状況で、どのような選択をしたかを詳しく説明してください。",
+    "desiredChange": "変えたい内容",
+    "desiredChangePlaceholder": "もしその時違う選択をしていたら、どのような選択をしたかったかを説明してください。",
     "next": "次へ",
-    "previous": "前へ",
-    "submit": "送信"
+    "previous": "前へ"
+  },
+  "complete": {
+    "title": "✨ 入力情報確認",
+    "currentSelf": "現在の姿",
+    "year": "時期",
+    "pastChoice": "当時の選択",
+    "desiredChange": "変えたい内容",
+    "modify": "修正",
+    "submit": "カルマとパラレルユニバース進入"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "分岐点を探索中…",
+      "別の平行世界に進入中…",
+      "別のあなたを追跡中…",
+      "確認。目標観測開始..."
+    ],
+    "title": "パラレルユニバースを探索しています。"
+  },
+  "result": {
+    "title": "パラレルユニバースの私からのメッセージ",
+    "restart": "やり直し",
+    "message": "メッセージ"
+  },
+  "error": {
+    "requiredFill": "{{label}}を入力してください",
+    "requiredSelect": "{{label}}を選択してください",
+    "min": "{{min}}以上の値を入力してください",
+    "max": "{{max}}以下の値を入力してください",
+    "minYear": "1900年以降の年を入力してください",
+    "maxYear": "{{max}}年以前の年を入力してください",
+    "minLength": "{{minLength}}文字以上入力してください"
   },
   "common": {
-    "loading": "読み込み中...",
-    "error": "エラーが発生しました",
-    "retry": "再試行"
+    "karma": "カルマ",
+    "dateFormat": "{{year}}年{{month}}月{{day}}日",
+    "months": [
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月"
+    ],
+    "weekDays": ["日", "月", "火", "水", "木", "金", "土"],
+    "year": "{{year}}年"
   }
 }

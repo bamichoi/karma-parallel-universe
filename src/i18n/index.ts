@@ -7,6 +7,9 @@ import enTranslation from './locales/en/translation.json';
 import jaTranslation from './locales/ja/translation.json';
 import zhTranslation from './locales/zh/translation.json';
 import itTranslation from './locales/it/translation.json';
+import esTranslation from './locales/es/translation.json';
+import frTranslation from './locales/fr/translation.json';
+import viTranslation from './locales/vi/translation.json';
 
 const resources = {
   ko: {
@@ -23,6 +26,15 @@ const resources = {
   },
   it: {
     translation: itTranslation
+  },
+  es: {
+    translation: esTranslation
+  },
+  fr: {
+    translation: frTranslation
+  },
+  vi: {
+    translation: viTranslation
   }
 };
 

@@ -1,4 +1,4 @@
-export type Language = "ko" | "en" | "ja" | "zh" | "it";
+export type Language = "ko" | "en" | "ja" | "zh" | "it" | "es" | "fr" | "vi";
 
 export interface LanguageOption {
   code: Language;
@@ -12,4 +12,7 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
   { code: "ja", name: "Japanese", nativeName: "日本語" },
   { code: "zh", name: "Chinese", nativeName: "中文" },
   { code: "it", name: "Italian", nativeName: "Italiano" },
+  { code: "es", name: "Spanish", nativeName: "Español" },
+  { code: "fr", name: "French", nativeName: "Français" },
+  { code: "vi", name: "Vietnamese", nativeName: "Tiếng Việt" },
 ];

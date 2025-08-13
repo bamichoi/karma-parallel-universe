@@ -1,21 +1,102 @@
 {
-  "welcome": "Benvenuti nell'Universo Parallelo di Karma",
+  "welcome": "Benvenuto nell'Universo Parallelo di Karma",
   "intro": {
-    "greeting": "Ciao! Sono Karma, la tua guida per esplorare il tuo destino.",
-    "description": "Curioso di come scelte passate diverse avrebbero potuto cambiare il tuo presente?",
-    "instruction": "Inserisci le tue informazioni e decisioni passate, e ti mostrerò le timeline dell'universo parallelo!"
+    "karmaDialogs": [
+      "Benvenuto, umano. Ti stavo aspettando.\\n\\nIo sono il Modello Karma.",
+      "Sono un umanoide AI superintelligente oltre la comprensione umana,\\n\\ncapace di osservare innumerevoli mondi paralleli simultaneamente.",
+      "Hai una scelta che vorresti annullare..?",
+      "Da qualche parte in un mondo parallelo, un'altra versione di te che ha fatto scelte diverse sta vivendo la sua vita.",
+      "Anche se non possiamo viaggiare nel tempo per invertire le scelte,\\n\\nquesto Karma ti mostrerà quella versione di te stesso nel mondo parallelo."
+    ],
+    "nextDialog": "Clicca ovunque per continuare",
+    "title": "C'è una scelta che vuoi cambiare?",
+    "description": "Come starebbe vivendo ora l'io\nche ha fatto scelte diverse?",
+    "start": "Inizia",
+    "skip": "Salta il saluto"
+  },
+  "process": {
+    "personalInfo": "Le Mie Informazioni",
+    "pastSituation": "Situazione Passata",
+    "complete": "Entra nell'Universo Parallelo"
   },
   "form": {
-    "personalInfo": "Informazioni Personali",
-    "pastSituation": "Situazione Passata",
-    "complete": "Completo",
+    "firstStepTitle": "🧑‍💼 Dimmi chi sei.",
+    "firstStepDescription": "Le tue informazioni non verranno memorizzate da nessuna parte.",
+    "birthday": "Data di Nascita",
+    "birthdayPlaceholder": "Seleziona una data",
+    "gender": "Genere",
+    "genderPlaceholder": "Seleziona il tuo genere",
+    "genderOptions": {
+      "male": "Maschio",
+      "female": "Femmina"
+    },
+    "currentLocation": "Posizione Attuale",
+    "currentLocationPlaceholder": "es. Roma, Italia",
+    "currentJob": "Lavoro Attuale",
+    "currentJobPlaceholder": "es. Sviluppatore Software",
+    "currentSelf": "Il Mio Sé Attuale",
+    "currentSelfPlaceholder": "Descriviti in dettaglio. Sentiti libero di scrivere della tua personalità, hobby, situazione attuale, ecc.",
+    "saveData": "Usa queste informazioni la prossima volta",
+    "secondStepTitle": "🕰️ Dimmi del passato che vuoi cambiare",
+    "year": "Quando è successo (anno)",
+    "yearPlaceholder": "es. 2020",
+    "pastChoice": "La scelta che ho fatto allora",
+    "pastChoicePlaceholder": "Descrivi in dettaglio qual era la situazione e che scelta hai fatto in quel momento.",
+    "desiredChange": "Cosa vuoi cambiare",
+    "desiredChangePlaceholder": "Se avessi fatto una scelta diversa allora, descrivi che scelta avresti voluto fare.",
     "next": "Avanti",
-    "previous": "Indietro",
-    "submit": "Invia"
+    "previous": "Indietro"
+  },
+  "complete": {
+    "title": "✨ Conferma Informazioni Inserite",
+    "currentSelf": "Sé Attuale",
+    "year": "Periodo",
+    "pastChoice": "Scelta Fatta Allora",
+    "desiredChange": "Cosa Vuoi Cambiare",
+    "modify": "Modifica",
+    "submit": "Entra nell'Universo Parallelo con Karma"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "Esplorando i punti di decisione…",
+      "Entrando in un altro mondo parallelo…",
+      "Tracciando un'altra versione di te…",
+      "Confermato. Inizio osservazione obiettivo..."
+    ],
+    "title": "Esplorando l'universo parallelo."
+  },
+  "result": {
+    "title": "Messaggio da Me nell'Universo Parallelo",
+    "restart": "Ricomincia",
+    "message": "Messaggio"
+  },
+  "error": {
+    "requiredFill": "Inserisci {{label}}",
+    "requiredSelect": "Seleziona {{label}}",
+    "min": "Inserisci un valore di {{min}} o superiore",
+    "max": "Inserisci un valore di {{max}} o inferiore",
+    "minYear": "Inserisci un anno dopo il 1900",
+    "maxYear": "Inserisci un anno prima del {{max}}",
+    "minLength": "Inserisci almeno {{minLength}} caratteri"
   },
   "common": {
-    "loading": "Caricamento...",
-    "error": "Si è verificato un errore",
-    "retry": "Riprova"
+    "karma": "Karma",
+    "dateFormat": "{{day}}/{{month}}/{{year}}",
+    "months": [
+      "Gen",
+      "Feb",
+      "Mar",
+      "Apr",
+      "Mag",
+      "Giu",
+      "Lug",
+      "Ago",
+      "Set",
+      "Ott",
+      "Nov",
+      "Dic"
+    ],
+    "weekDays": ["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"],
+    "year": "{{year}}"
   }
 }

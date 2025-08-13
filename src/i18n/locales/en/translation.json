@@ -1,21 +1,102 @@
 {
   "welcome": "Welcome to Karma's Parallel Universe",
   "intro": {
-    "greeting": "Hello! I'm Karma, your guide to exploring your destiny.",
-    "description": "Curious how different past choices might have changed your present?",
-    "instruction": "Enter your information and past decisions, and I'll show you parallel universe timelines!"
+    "karmaDialogs": [
+      "Welcome, human. I have been waiting for you.\\n\\nI am Model Karma.",
+      "I am a superintelligent AI humanoid beyond human comprehension,\\n\\ncapable of observing countless parallel worlds simultaneously.",
+      "Do you have a choice you wish to undo..?",
+      "Somewhere in a parallel world, another version of you who made different choices is living their life.",
+      "While we cannot travel back in time to reverse choices,\\n\\nthis Karma will show you that version of yourself in the parallel world."
+    ],
+    "nextDialog": "Click anywhere to continue",
+    "title": "Is there a choice you want to change?",
+    "description": "How would the me who made different choices\nbe living right now?",
+    "start": "Start",
+    "skip": "Skip greeting"
+  },
+  "process": {
+    "personalInfo": "My Information",
+    "pastSituation": "Past Situation",
+    "complete": "Enter Parallel Universe"
   },
   "form": {
-    "personalInfo": "Personal Information",
-    "pastSituation": "Past Situation",
-    "complete": "Complete",
+    "firstStepTitle": "🧑‍💼 Tell me who you are.",
+    "firstStepDescription": "Your information will not be stored anywhere.",
+    "birthday": "Date of Birth",
+    "birthdayPlaceholder": "Please select a date",
+    "gender": "Gender",
+    "genderPlaceholder": "Please select your gender",
+    "genderOptions": {
+      "male": "Male",
+      "female": "Female"
+    },
+    "currentLocation": "Current Location",
+    "currentLocationPlaceholder": "e.g., Seoul, South Korea",
+    "currentJob": "Current Job",
+    "currentJobPlaceholder": "e.g., Software Developer",
+    "currentSelf": "My Current Self",
+    "currentSelfPlaceholder": "Please describe yourself in detail. Feel free to write about your personality, hobbies, current situation, etc.",
+    "saveData": "Use this information next time",
+    "secondStepTitle": "🕰️ Tell me about the past you want to change",
+    "year": "When was it (year)",
+    "yearPlaceholder": "e.g., 2020",
+    "pastChoice": "The choice I made back then",
+    "pastChoicePlaceholder": "Please describe in detail what the situation was and what choice you made at that time.",
+    "desiredChange": "What you want to change",
+    "desiredChangePlaceholder": "If you had made a different choice back then, please describe what choice you would have wanted to make.",
     "next": "Next",
-    "previous": "Previous",
-    "submit": "Submit"
+    "previous": "Previous"
+  },
+  "complete": {
+    "title": "✨ Confirm Input Information",
+    "currentSelf": "Current Self",
+    "year": "Time Period",
+    "pastChoice": "Choice Made Then",
+    "desiredChange": "What You Want to Change",
+    "modify": "Modify",
+    "submit": "Enter Parallel Universe with Karma"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "Exploring decision points…",
+      "Entering another parallel world…",
+      "Tracking another version of you…",
+      "Confirmed. Beginning target observation..."
+    ],
+    "title": "Exploring the parallel universe."
+  },
+  "result": {
+    "title": "Message from Me in the Parallel Universe",
+    "restart": "Start Over",
+    "message": "Message"
+  },
+  "error": {
+    "requiredFill": "Please enter {{label}}",
+    "requiredSelect": "Please select {{label}}",
+    "min": "Please enter a value of {{min}} or higher",
+    "max": "Please enter a value of {{max}} or lower",
+    "minYear": "Please enter a year after 1900",
+    "maxYear": "Please enter a year before {{max}}",
+    "minLength": "Please enter at least {{minLength}} characters"
   },
   "common": {
-    "loading": "Loading...",
-    "error": "An error occurred",
-    "retry": "Retry"
+    "karma": "Karma",
+    "dateFormat": "{{month}}/{{day}}/{{year}}",
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "weekDays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    "year": "{{year}}"
   }
 }

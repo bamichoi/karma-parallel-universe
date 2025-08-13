@@ -1,0 +1,102 @@
+{
+  "welcome": "Bienvenue dans l'Univers Parallèle de Karma",
+  "intro": {
+    "karmaDialogs": [
+      "Bienvenue, humain. Je vous attendais.\\n\\nJe suis le Modèle Karma.",
+      "Je suis un humanoïde IA superintelligent au-delà de la compréhension humaine,\\n\\ncapable d'observer d'innombrables mondes parallèles simultanément.",
+      "Avez-vous un choix que vous aimeriez défaire..?",
+      "Quelque part dans un monde parallèle, une autre version de vous qui a fait des choix différents vit sa vie.",
+      "Bien que nous ne puissions pas voyager dans le temps pour inverser les choix,\\n\\nce Karma vous montrera cette version de vous-même dans le monde parallèle."
+    ],
+    "nextDialog": "Cliquez n'importe où pour continuer",
+    "title": "Y a-t-il un choix que vous voulez changer ?",
+    "description": "Comment vivrait maintenant le moi\nqui a fait des choix différents ?",
+    "start": "Commencer",
+    "skip": "Passer les salutations"
+  },
+  "process": {
+    "personalInfo": "Mes Informations",
+    "pastSituation": "Situation Passée",
+    "complete": "Entrer dans l'Univers Parallèle"
+  },
+  "form": {
+    "firstStepTitle": "🧑‍💼 Dites-moi qui vous êtes.",
+    "firstStepDescription": "Vos informations ne seront stockées nulle part.",
+    "birthday": "Date de Naissance",
+    "birthdayPlaceholder": "Veuillez sélectionner une date",
+    "gender": "Genre",
+    "genderPlaceholder": "Veuillez sélectionner votre genre",
+    "genderOptions": {
+      "male": "Masculin",
+      "female": "Féminin"
+    },
+    "currentLocation": "Localisation Actuelle",
+    "currentLocationPlaceholder": "ex: Paris, France",
+    "currentJob": "Emploi Actuel",
+    "currentJobPlaceholder": "ex: Développeur de Logiciels",
+    "currentSelf": "Mon Moi Actuel",
+    "currentSelfPlaceholder": "Veuillez vous décrire en détail. N'hésitez pas à écrire sur votre personnalité, vos loisirs, votre situation actuelle, etc.",
+    "saveData": "Utiliser ces informations la prochaine fois",
+    "secondStepTitle": "🕰️ Parlez-moi du passé que vous voulez changer",
+    "year": "Quand était-ce (année)",
+    "yearPlaceholder": "ex: 2020",
+    "pastChoice": "Le choix que j'ai fait alors",
+    "pastChoicePlaceholder": "Veuillez décrire en détail quelle était la situation et quel choix vous avez fait à ce moment-là.",
+    "desiredChange": "Ce que vous voulez changer",
+    "desiredChangePlaceholder": "Si vous aviez fait un choix différent à ce moment-là, décrivez quel choix vous auriez voulu faire.",
+    "next": "Suivant",
+    "previous": "Précédent"
+  },
+  "complete": {
+    "title": "✨ Confirmer les Informations Saisies",
+    "currentSelf": "Moi Actuel",
+    "year": "Période",
+    "pastChoice": "Choix Fait Alors",
+    "desiredChange": "Ce Que Vous Voulez Changer",
+    "modify": "Modifier",
+    "submit": "Entrer dans l'Univers Parallèle avec Karma"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "Exploration des points de décision…",
+      "Entrée dans un autre monde parallèle…",
+      "Traçage d'une autre version de vous…",
+      "Confirmé. Début de l'observation de la cible..."
+    ],
+    "title": "Exploration de l'univers parallèle."
+  },
+  "result": {
+    "title": "Message du Moi dans l'Univers Parallèle",
+    "restart": "Recommencer",
+    "message": "Message"
+  },
+  "error": {
+    "requiredFill": "Veuillez saisir {{label}}",
+    "requiredSelect": "Veuillez sélectionner {{label}}",
+    "min": "Veuillez saisir une valeur de {{min}} ou plus",
+    "max": "Veuillez saisir une valeur de {{max}} ou moins",
+    "minYear": "Veuillez saisir une année après 1900",
+    "maxYear": "Veuillez saisir une année avant {{max}}",
+    "minLength": "Veuillez saisir au moins {{minLength}} caractères"
+  },
+  "common": {
+    "karma": "Karma",
+    "dateFormat": "{{day}}/{{month}}/{{year}}",
+    "months": [
+      "Jan",
+      "Fév",
+      "Mar",
+      "Avr",
+      "Mai",
+      "Jun",
+      "Juil",
+      "Aoû",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Déc"
+    ],
+    "weekDays": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
+    "year": "{{year}}"
+  }
+}

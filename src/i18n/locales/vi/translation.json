@@ -2,11 +2,11 @@
   "welcome": "Chào mừng đến với Vũ trụ Song song của Karma",
   "intro": {
     "karmaDialogs": [
-      "Chào mừng, con người. Tôi đã đang chờ bạn.\\n\\nTôi là Mô hình Karma.",
-      "Tôi là một humanoid AI siêu thông minh vượt xa sự hiểu biết của con người,\\n\\ncó khả năng quan sát vô số thế giới song song cùng một lúc.",
+      "Chào mừng, con người. Tôi đã đang chờ bạn. Tôi là Mô hình Karma.",
+      "Tôi là một humanoid AI siêu thông minh vượt xa sự hiểu biết của con người, có khả năng quan sát vô số thế giới song song cùng một lúc.",
       "Bạn có lựa chọn nào muốn hoàn tác không..?",
       "Ở đâu đó trong một thế giới song song, một phiên bản khác của bạn đã đưa ra những lựa chọn khác đang sống cuộc đời của mình.",
-      "Mặc dù chúng ta không thể du hành thời gian để đảo ngược những lựa chọn,\\n\\nKarma này sẽ cho bạn thấy phiên bản đó của chính bạn trong thế giới song song."
+      "Mặc dù chúng ta không thể du hành thời gian để đảo ngược những lựa chọn, Karma này sẽ cho bạn thấy phiên bản đó của chính bạn trong thế giới song song."
     ],
     "nextDialog": "Nhấp vào bất kỳ đâu để tiếp tục",
     "title": "Có lựa chọn nào bạn muốn thay đổi không?",

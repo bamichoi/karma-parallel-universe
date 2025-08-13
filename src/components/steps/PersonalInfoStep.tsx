@@ -70,7 +70,10 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
 
   return (
     <StepContainer>
-      <StepTitle title="🧑‍💼 당신이 누구인지 알려주세요." description="" />
+      <StepTitle
+        title="🧑‍💼 당신이 누구인지 알려주세요."
+        description="입력하신 정보는 어디에도 저장하지 않습니다."
+      />
 
       <DateInput
         name="birthDate"

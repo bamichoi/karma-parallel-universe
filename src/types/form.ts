@@ -14,6 +14,7 @@ export interface PastSituation {
 
 export interface UniverseFormData extends PersonalInfo, PastSituation {
   saveData?: boolean;
+  lang?: string;
 }
 
 export interface TimelineItem {

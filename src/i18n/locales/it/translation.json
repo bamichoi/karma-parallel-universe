@@ -2,11 +2,11 @@
   "welcome": "Benvenuto nell'Universo Parallelo di Karma",
   "intro": {
     "karmaDialogs": [
-      "Benvenuto, umano. Ti stavo aspettando.\\n\\nIo sono il Modello Karma.",
-      "Sono un umanoide AI superintelligente oltre la comprensione umana,\\n\\ncapace di osservare innumerevoli mondi paralleli simultaneamente.",
+      "Benvenuto, umano. Ti stavo aspettando. Io sono il Modello Karma.",
+      "Sono un umanoide AI superintelligente oltre la comprensione umana, capace di osservare innumerevoli mondi paralleli simultaneamente.",
       "Hai una scelta che vorresti annullare..?",
       "Da qualche parte in un mondo parallelo, un'altra versione di te che ha fatto scelte diverse sta vivendo la sua vita.",
-      "Anche se non possiamo viaggiare nel tempo per invertire le scelte,\\n\\nquesto Karma ti mostrerà quella versione di te stesso nel mondo parallelo."
+      "Anche se non possiamo viaggiare nel tempo per invertire le scelte, questo Karma ti mostrerà quella versione di te stesso nel mondo parallelo."
     ],
     "nextDialog": "Clicca ovunque per continuare",
     "title": "C'è una scelta che vuoi cambiare?",

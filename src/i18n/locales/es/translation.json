@@ -1,0 +1,102 @@
+{
+  "welcome": "Bienvenido al Universo Paralelo de Karma",
+  "intro": {
+    "karmaDialogs": [
+      "Bienvenido, humano. Te he estado esperando.\\n\\nSoy el Modelo Karma.",
+      "Soy un humanoide AI superinteligente más allá de la comprensión humana,\\n\\ncapaz de observar innumerables mundos paralelos simultáneamente.",
+      "¿Tienes alguna elección que te gustaría deshacer..?",
+      "En algún lugar de un mundo paralelo, otra versión de ti que tomó decisiones diferentes está viviendo su vida.",
+      "Aunque no podemos viajar en el tiempo para revertir las decisiones,\\n\\neste Karma te mostrará esa versión de ti mismo en el mundo paralelo."
+    ],
+    "nextDialog": "Haz clic en cualquier lugar para continuar",
+    "title": "¿Hay alguna elección que quieras cambiar?",
+    "description": "¿Cómo estaría viviendo ahora el yo\nque tomó decisiones diferentes?",
+    "start": "Comenzar",
+    "skip": "Saltar saludo"
+  },
+  "process": {
+    "personalInfo": "Mi Información",
+    "pastSituation": "Situación Pasada",
+    "complete": "Entrar al Universo Paralelo"
+  },
+  "form": {
+    "firstStepTitle": "🧑‍💼 Cuéntame quién eres.",
+    "firstStepDescription": "Tu información no se guardará en ningún lugar.",
+    "birthday": "Fecha de Nacimiento",
+    "birthdayPlaceholder": "Por favor selecciona una fecha",
+    "gender": "Género",
+    "genderPlaceholder": "Por favor selecciona tu género",
+    "genderOptions": {
+      "male": "Masculino",
+      "female": "Femenino"
+    },
+    "currentLocation": "Ubicación Actual",
+    "currentLocationPlaceholder": "ej: Madrid, España",
+    "currentJob": "Trabajo Actual",
+    "currentJobPlaceholder": "ej: Desarrollador de Software",
+    "currentSelf": "Mi Yo Actual",
+    "currentSelfPlaceholder": "Por favor descríbete en detalle. Siéntete libre de escribir sobre tu personalidad, aficiones, situación actual, etc.",
+    "saveData": "Usar esta información la próxima vez",
+    "secondStepTitle": "🕰️ Cuéntame sobre el pasado que quieres cambiar",
+    "year": "¿Cuándo fue? (año)",
+    "yearPlaceholder": "ej: 2020",
+    "pastChoice": "La elección que hice entonces",
+    "pastChoicePlaceholder": "Por favor describe en detalle cuál era la situación y qué elección tomaste en ese momento.",
+    "desiredChange": "Lo que quieres cambiar",
+    "desiredChangePlaceholder": "Si hubieras tomado una decisión diferente entonces, describe qué elección habrías querido tomar.",
+    "next": "Siguiente",
+    "previous": "Anterior"
+  },
+  "complete": {
+    "title": "✨ Confirmar Información Ingresada",
+    "currentSelf": "Yo Actual",
+    "year": "Período",
+    "pastChoice": "Elección Tomada Entonces",
+    "desiredChange": "Lo Que Quieres Cambiar",
+    "modify": "Modificar",
+    "submit": "Entrar al Universo Paralelo con Karma"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "Explorando puntos de decisión…",
+      "Entrando a otro mundo paralelo…",
+      "Rastreando otra versión de ti…",
+      "Confirmado. Comenzando observación del objetivo..."
+    ],
+    "title": "Explorando el universo paralelo."
+  },
+  "result": {
+    "title": "Mensaje del Yo en el Universo Paralelo",
+    "restart": "Comenzar de Nuevo",
+    "message": "Mensaje"
+  },
+  "error": {
+    "requiredFill": "Por favor ingresa {{label}}",
+    "requiredSelect": "Por favor selecciona {{label}}",
+    "min": "Por favor ingresa un valor de {{min}} o mayor",
+    "max": "Por favor ingresa un valor de {{max}} o menor",
+    "minYear": "Por favor ingresa un año después de 1900",
+    "maxYear": "Por favor ingresa un año antes de {{max}}",
+    "minLength": "Por favor ingresa al menos {{minLength}} caracteres"
+  },
+  "common": {
+    "karma": "Karma",
+    "dateFormat": "{{day}}/{{month}}/{{year}}",
+    "months": [
+      "Ene",
+      "Feb",
+      "Mar",
+      "Abr",
+      "May",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dic"
+    ],
+    "weekDays": ["Dom", "Lun", "Mar", "Mié", "Jue", "Vie", "Sáb"],
+    "year": "{{year}}"
+  }
+}

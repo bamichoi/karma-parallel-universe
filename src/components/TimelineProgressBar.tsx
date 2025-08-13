@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import type { TimelineItem } from "../types/form";
+import { useTranslation } from "react-i18next";
 
 interface TimelineProgressBarProps {
   timeline: TimelineItem[];
@@ -12,6 +13,8 @@ const TimelineProgressBar = ({
   currentIndex,
   isLastItem,
 }: TimelineProgressBarProps) => {
+  const { t } = useTranslation();
+
   return (
     <ProgressBarContainer>
       {timeline.map((item, index) => {
@@ -39,7 +42,7 @@ const TimelineProgressBar = ({
           ✨
         </TimelineStep>
         <StepLabel $isActive={isLastItem} $isCompleted={false}>
-          메시지
+          {t("result.message")}
         </StepLabel>
       </TimelineStepContainer>
     </ProgressBarContainer>

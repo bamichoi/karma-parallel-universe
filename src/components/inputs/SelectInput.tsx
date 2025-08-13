@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
 import type { UniverseFormData } from "../../types/form";
 import CustomDropdown from "./CustomDropdown";
+import { useTranslation } from "react-i18next";
 
 interface Option {
   value: string;
@@ -33,6 +34,7 @@ const SelectInput = ({
     setValue,
     watch,
   } = useFormContext<UniverseFormData>();
+  const { t } = useTranslation();
 
   const fieldId = id || name.toString();
   const error = errors[name];
@@ -49,7 +51,7 @@ const SelectInput = ({
         id={fieldId}
         type="hidden"
         {...register(name, {
-          required: required ? `${label}을 선택해주세요` : false,
+          required: required ? t("error.requiredSelect", { label }) : false,
         })}
       />
       <CustomDropdown

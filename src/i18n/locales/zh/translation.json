@@ -1,0 +1,102 @@
+{
+  "welcome": "欢迎来到业力的平行宇宙",
+  "intro": {
+    "karmaDialogs": [
+      "欢迎您，人类。我一直在等您。\\n\\n我是模型业力。",
+      "我是超越人类理解水平的超智能AI人形机器人，\\n\\n能够同时观测无数平行世界。",
+      "您有想要挽回的选择吗..？",
+      "在某个平行世界中，做出了与您不同选择的另一个您正在生活着。",
+      "虽然无法时光倒流来撤销选择，\\n\\n但这个业力会向您展示平行世界中的那个您。"
+    ],
+    "nextDialog": "点击任意处继续",
+    "title": "有想要改变的选择吗？",
+    "description": "做出不同选择的我\n现在会如何生活呢？",
+    "start": "开始",
+    "skip": "跳过问候"
+  },
+  "process": {
+    "personalInfo": "我的信息",
+    "pastSituation": "过去情况",
+    "complete": "进入平行宇宙"
+  },
+  "form": {
+    "firstStepTitle": "🧑‍💼 请告诉我您是谁。",
+    "firstStepDescription": "您输入的信息不会保存在任何地方。",
+    "birthday": "出生日期",
+    "birthdayPlaceholder": "请选择日期",
+    "gender": "性别",
+    "genderPlaceholder": "请选择您的性别",
+    "genderOptions": {
+      "male": "男性",
+      "female": "女性"
+    },
+    "currentLocation": "当前居住地",
+    "currentLocationPlaceholder": "例：中国 北京",
+    "currentJob": "当前职业",
+    "currentJobPlaceholder": "例：软件开发工程师",
+    "currentSelf": "我当前的样子",
+    "currentSelfPlaceholder": "请详细描述现在的您。请自由地写下性格、兴趣爱好、当前状况等。",
+    "saveData": "下次继续使用这些信息",
+    "secondStepTitle": "🕰️ 请告诉我您想要改变的过去",
+    "year": "是什么时候（年份）",
+    "yearPlaceholder": "例：2020",
+    "pastChoice": "当时我做的选择",
+    "pastChoicePlaceholder": "请详细描述当时是什么情况，您做了什么选择。",
+    "desiredChange": "想要改变的内容",
+    "desiredChangePlaceholder": "如果当时做出了不同的选择，请描述您想要做出的选择。",
+    "next": "下一步",
+    "previous": "上一步"
+  },
+  "complete": {
+    "title": "✨ 输入信息确认",
+    "currentSelf": "当前的样子",
+    "year": "时期",
+    "pastChoice": "当时的选择",
+    "desiredChange": "想要改变的内容",
+    "modify": "修改",
+    "submit": "与业力一起进入平行宇宙"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "正在探索分叉点…",
+      "正在进入另一个平行世界…",
+      "正在追踪另一个您…",
+      "确认。开始目标观测..."
+    ],
+    "title": "正在探索平行宇宙。"
+  },
+  "result": {
+    "title": "来自平行宇宙的我的消息",
+    "restart": "重新开始",
+    "message": "消息"
+  },
+  "error": {
+    "requiredFill": "请输入{{label}}",
+    "requiredSelect": "请选择{{label}}",
+    "min": "请输入{{min}}以上的值",
+    "max": "请输入{{max}}以下的值",
+    "minYear": "请输入1900年以后的年份",
+    "maxYear": "请输入{{max}}年以前的年份",
+    "minLength": "请输入{{minLength}}个字符以上"
+  },
+  "common": {
+    "karma": "业力",
+    "dateFormat": "{{year}}年{{month}}月{{day}}日",
+    "months": [
+      "1月",
+      "2月",
+      "3月",
+      "4月",
+      "5月",
+      "6月",
+      "7月",
+      "8月",
+      "9月",
+      "10月",
+      "11月",
+      "12月"
+    ],
+    "weekDays": ["日", "一", "二", "三", "四", "五", "六"],
+    "year": "{{year}}年"
+  }
+}

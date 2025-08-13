@@ -3,6 +3,7 @@ import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
 import type { UniverseFormData } from "../../types/form";
 import CustomCalendar from "./CustomCalendar";
+import { useTranslation } from "react-i18next";
 
 interface DateInputProps {
   name: keyof UniverseFormData;
@@ -26,7 +27,7 @@ const DateInput = ({
     setValue,
     watch,
   } = useFormContext<UniverseFormData>();
-
+  const { t } = useTranslation();
   const fieldId = id || name.toString();
   const error = errors[name];
   const selectedDate = watch(name as keyof UniverseFormData) as string;
@@ -38,9 +39,11 @@ const DateInput = ({
   const formatDisplayDate = (dateString: string) => {
     if (!dateString) return "";
     const date = new Date(dateString);
-    return `${date.getFullYear()}년 ${
-      date.getMonth() + 1
-    }월 ${date.getDate()}일`;
+    return t("common.dateFormat", {
+      year: date.getFullYear(),
+      month: date.getMonth() + 1,
+      day: date.getDate(),
+    });
   };
 
   return (
@@ -51,11 +54,11 @@ const DateInput = ({
           id={fieldId}
           type="text"
           readOnly
-          placeholder="날짜를 선택해주세요"
+          placeholder={t("form.birthdayPlaceholder")}
           value={formatDisplayDate(selectedDate)}
           onClick={() => setIsCalendarOpen(true)}
           {...register(name, {
-            required: required ? `${label}을 입력해주세요` : false,
+            required: required ? t("error.requiredFill", { label }) : false,
           })}
         />
         <CalendarIcon onClick={() => setIsCalendarOpen(true)}>📅</CalendarIcon>

@@ -8,6 +8,7 @@ import TextInput from "../inputs/TextInput";
 import TextAreaInput from "../inputs/TextAreaInput";
 import CheckboxInput from "../inputs/CheckboxInput";
 import StepTitle from "./StepTitle";
+import { useTranslation } from "react-i18next";
 
 interface PersonalInfoStepProps {
   onNext: () => void;
@@ -20,7 +21,7 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
     trigger,
     formState: { isValid },
   } = useFormContext<UniverseFormData>();
-
+  const { t } = useTranslation();
   // Load data from localStorage on component mount
   useEffect(() => {
     const savedData = localStorage.getItem("universeFormData");
@@ -71,13 +72,13 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
   return (
     <StepContainer>
       <StepTitle
-        title="🧑‍💼 당신이 누구인지 알려주세요."
-        description="입력하신 정보는 어디에도 저장하지 않습니다."
+        title={t("form.firstStepTitle")}
+        description={t("form.firstStepDescription")}
       />
 
       <DateInput
         name="birthDate"
-        label="생년월일"
+        label={t("form.birthday")}
         required={true}
         id="birthDate"
         maxDate={new Date().toISOString().split("T")[0]}
@@ -85,49 +86,45 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
 
       <SelectInput
         name="gender"
-        label="성별"
+        label={t("form.gender")}
         options={[
-          { value: "female", label: "♀ 여성" },
-          { value: "male", label: "♂ 남성" },
+          { value: "female", label: "♀ " + t("form.genderOptions.female") },
+          { value: "male", label: "♂ " + t("form.genderOptions.male") },
         ]}
-        placeholder="성별을 선택하세요"
+        placeholder={t("form.genderPlaceholder")}
         required={true}
         id="gender"
       />
 
       <TextInput
         name="currentLocation"
-        label="현재 거주지"
-        placeholder="예: 대한민국 서울"
+        label={t("form.currentLocation")}
+        placeholder={t("form.currentLocationPlaceholder")}
         required={true}
         id="currentLocation"
       />
 
       <TextInput
         name="currentJob"
-        label="현재 직업"
-        placeholder="예: 소프트웨어 개발자"
+        label={t("form.currentJob")}
+        placeholder={t("form.currentJobPlaceholder")}
         required={true}
         id="currentJob"
       />
 
       <TextAreaInput
         name="currentSelf"
-        label="내 현재의 모습"
-        placeholder="현재의 나에 대해 자세히 설명해주세요. 성격, 취미, 현재 상황 등을 포함해서 적어주세요."
+        label={t("form.currentSelf")}
+        placeholder={t("form.currentSelfPlaceholder")}
         required={true}
         id="currentSelf"
         minLength={10}
       />
 
-      <CheckboxInput
-        name="saveData"
-        label="이 정보를 다음에도 사용"
-        id="saveData"
-      />
+      <CheckboxInput name="saveData" label={t("form.saveData")} id="saveData" />
 
       <Button type="button" onClick={onNext} disabled={!isValid}>
-        다음 단계
+        {t("form.next")}
       </Button>
     </StepContainer>
   );

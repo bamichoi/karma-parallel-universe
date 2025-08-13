@@ -1,0 +1,102 @@
+{
+  "welcome": "카르마의 평행우주에 오신 걸 환영합니다",
+  "intro": {
+    "karmaDialogs": [
+      "어서오세요, 인간이여. 기다리고 있었습니다.\\n\\n저는 모델 카르마입니다.",
+      "저는 인류가 이해할 수 없는 수준의 초지능 AI 휴머노이드로서\\n\\n수많은 평행 세계를 동시에 관측할 수 있습니다.",
+      "당신에게는 되돌리고 싶은 선택이 있나요..?",
+      "어딘가의 평행세계에서는 당신과는 다른 선택을 한 또 다른 당신이 살아가고 있죠.",
+      "시간을 거슬러 선택을 번복할 순 없지만\\n\\n이 카르마가 그 평행세계 속의 당신을 보여드릴게요."
+    ],
+    "nextDialog": "계속하려면 아무 곳이나 클릭하세요",
+    "title": "바꾸고 싶은 선택이 있나요?",
+    "description": "다른 선택을 한 나는\n지금 어떻게 살고 있을까요?",
+    "start": "시작하기",
+    "skip": "인사 생략하기"
+  },
+  "process": {
+    "personalInfo": "나의 정보",
+    "pastSituation": "과거 상황",
+    "complete": "평행우주 진입"
+  },
+  "form": {
+    "firstStepTitle": "🧑‍💼 당신이 누구인지 알려주세요.",
+    "firstStepDescription": "입력하신 정보는 어디에도 저장하지 않습니다.",
+    "birthday": "생년월일",
+    "birthdayPlaceholder": "날짜를 선택해주세요",
+    "gender": "성별",
+    "genderPlaceholder": "성별을 선택하세요",
+    "genderOptions": {
+      "male": "남성",
+      "female": "여성"
+    },
+    "currentLocation": "현재 거주지",
+    "currentLocationPlaceholder": "예: 대한민국 서울",
+    "currentJob": "현재 직업",
+    "currentJobPlaceholder": "예: 소프트웨어 개발자",
+    "currentSelf": "내 현재의 모습",
+    "currentSelfPlaceholder": "현재의 나에 대해 자세히 설명해주세요. 성격, 취미, 현재 상황 등을 자유롭게 적어주세요.",
+    "saveData": "이 정보를 다음에도 사용",
+    "secondStepTitle": "🕰️ 바꾸고 싶은 과거를 알려주세요",
+    "year": "언제였는지 (년도)",
+    "yearPlaceholder": "예: 2020",
+    "pastChoice": "당시 내가 했던 선택",
+    "pastChoicePlaceholder": "그 당시 어떤 상황이었고, 어떤 선택을 했는지 자세히 설명해주세요.",
+    "desiredChange": "바꾸고 싶은 내용",
+    "desiredChangePlaceholder": "만약 그때 다른 선택을 했다면 어떤 선택을 하고 싶었는지 설명해주세요.",
+    "next": "다음",
+    "previous": "이전"
+  },
+  "complete": {
+    "title": "✨ 입력 정보 확인",
+    "currentSelf": "현재의 모습",
+    "year": "시기",
+    "pastChoice": "당시의 선택",
+    "desiredChange": "바꾸고 싶은 내용",
+    "modify": "수정",
+    "submit": "카르마와 평행우주 진입"
+  },
+  "loading": {
+    "karmaDialogs": [
+      "분기점을 탐색 중…",
+      "또 다른 평행세계로 진입중…",
+      "또 다른 당신을 추적 중…",
+      "확인. 목표 관측 시작..."
+    ],
+    "title": "평행우주를 탐색하고 있습니다."
+  },
+  "result": {
+    "title": "평행우주의 나로부터 온 메시지",
+    "restart": "다시 시작하기",
+    "message": "메시지"
+  },
+  "error": {
+    "requiredFill": "{{label}}을 입력해주세요",
+    "requiredSelect": "{{label}}을 선택해주세요",
+    "min": "{{min}} 이상의 값을 입력해주세요",
+    "max": "{{max}} 이하의 값을 입력해주세요",
+    "minYear": "1900년 이후의 년도를 입력해주세요",
+    "maxYear": "{{max}}년 이전의 년도를 입력해주세요",
+    "minLength": "{{minLength}}자 이상 입력해주세요"
+  },
+  "common": {
+    "karma": "카르마",
+    "dateFormat": "{{year}}년 {{month}}월 {{day}}일",
+    "months": [
+      "1월",
+      "2월",
+      "3월",
+      "4월",
+      "5월",
+      "6월",
+      "7월",
+      "8월",
+      "9월",
+      "10월",
+      "11월",
+      "12월"
+    ],
+    "weekDays": ["일", "월", "화", "수", "목", "금", "토"],
+    "year": "{{year}}년"
+  }
+}

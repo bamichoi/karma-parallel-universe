@@ -1,6 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
 import type { UniverseFormData } from "../../types/form";
+import { useTranslation } from "react-i18next";
 
 interface TextInputProps {
   name: keyof UniverseFormData;
@@ -23,6 +24,7 @@ const TextInput = ({
     register,
     formState: { errors },
   } = useFormContext<UniverseFormData>();
+  const { t } = useTranslation();
 
   const fieldId = id || name.toString();
   const error = errors[name];
@@ -36,7 +38,7 @@ const TextInput = ({
         placeholder={placeholder}
         autoComplete="off"
         {...register(name, {
-          required: required ? `${label}을 입력해주세요` : false,
+          required: required ? t("error.requiredFill", { label }) : false,
         })}
       />
       {error && <ErrorMessage>{error.message}</ErrorMessage>}

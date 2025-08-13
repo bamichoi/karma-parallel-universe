@@ -17,9 +17,10 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
   const {
     watch,
     setValue,
+    trigger,
     formState: { isValid },
   } = useFormContext<UniverseFormData>();
-  console.log(isValid);
+
   // Load data from localStorage on component mount
   useEffect(() => {
     const savedData = localStorage.getItem("universeFormData");
@@ -33,11 +34,13 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
           }
         });
         setValue("saveData", true);
+        // Trigger validation after setting values
+        trigger();
       } catch (error) {
         console.error("Failed to load saved data:", error);
       }
     }
-  }, [setValue]);
+  }, [setValue, trigger]);
 
   // Watch all form fields and saveData to save/remove data from localStorage
   const saveData = watch("saveData");

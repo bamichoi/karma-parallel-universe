@@ -3,6 +3,8 @@ import styled from "styled-components";
 import type { UniverseFormData } from "../../types/form";
 import NumberInput from "../inputs/NumberInput";
 import TextAreaInput from "../inputs/TextAreaInput";
+import StepTitle from "./StepTitle";
+import { useTranslation } from "react-i18next";
 
 interface PastSituationStepProps {
   onNext: () => void;
@@ -13,29 +15,30 @@ const PastSituationStep = ({ onNext, onPrev }: PastSituationStepProps) => {
   const {
     formState: { isValid },
   } = useFormContext<UniverseFormData>();
+  const { t } = useTranslation();
 
   const currentYear = new Date().getFullYear();
 
   return (
     <StepContainer>
-      <Title>🕰️ 바꾸고 싶은 과거를 알려주세요</Title>
+      <StepTitle title={t("form.secondStepTitle")} description="" />
 
       <NumberInput
         name="year"
-        label="언제였는지 (년도)"
-        placeholder="예: 2020"
+        label={t("form.year")}
+        placeholder={t("form.yearPlaceholder")}
         required={true}
         id="year"
         min={1900}
         max={currentYear}
-        minMessage="1900년 이후의 년도를 입력해주세요"
-        maxMessage={`${currentYear}년 이전의 년도를 입력해주세요`}
+        minMessage={t("error.minYear")}
+        maxMessage={t("error.maxYear", { max: currentYear })}
       />
 
       <TextAreaInput
         name="pastChoice"
-        label="당시 내가 했던 선택"
-        placeholder="그 당시 어떤 상황이었고, 어떤 선택을 했는지 자세히 설명해주세요."
+        label={t("form.pastChoice")}
+        placeholder={t("form.pastChoicePlaceholder")}
         required={true}
         id="pastChoice"
         minLength={10}
@@ -43,8 +46,8 @@ const PastSituationStep = ({ onNext, onPrev }: PastSituationStepProps) => {
 
       <TextAreaInput
         name="desiredChange"
-        label="바꾸고 싶은 내용"
-        placeholder="만약 그때 다른 선택을 했다면 어떤 선택을 하고 싶었는지 설명해주세요."
+        label={t("form.desiredChange")}
+        placeholder={t("form.desiredChangePlaceholder")}
         required={true}
         id="desiredChange"
         minLength={10}
@@ -52,10 +55,10 @@ const PastSituationStep = ({ onNext, onPrev }: PastSituationStepProps) => {
 
       <ButtonContainer>
         <Button type="button" onClick={onPrev} $variant="secondary">
-          이전
+          {t("form.previous")}
         </Button>
         <Button type="button" onClick={onNext} disabled={!isValid}>
-          다음
+          {t("form.next")}
         </Button>
       </ButtonContainer>
     </StepContainer>
@@ -68,15 +71,6 @@ const StepContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-`;
-
-const Title = styled.h2`
-  font-family: "Noto Serif KR", serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #f1f5f9;
-  margin-bottom: 1.5rem;
-  text-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
 `;
 
 const ButtonContainer = styled.div`

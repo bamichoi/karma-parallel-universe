@@ -1,0 +1,21 @@
+{
+  "welcome": "欢迎来到业力的平行宇宙",
+  "intro": {
+    "greeting": "你好！我是业力，你探索命运的向导。",
+    "description": "好奇过去不同的选择如何改变现在吗？",
+    "instruction": "输入您的信息和过去的决定，我将为您展示平行宇宙时间线！"
+  },
+  "form": {
+    "personalInfo": "个人信息",
+    "pastSituation": "过去情况",
+    "complete": "完成",
+    "next": "下一步",
+    "previous": "上一步",
+    "submit": "提交"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "发生错误",
+    "retry": "重试"
+  }
+}

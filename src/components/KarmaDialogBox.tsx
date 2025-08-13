@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 
 interface KarmaDialogBoxProps {
@@ -18,6 +19,7 @@ const KarmaDialogBox = ({
 }: KarmaDialogBoxProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isTypingComplete, setIsTypingComplete] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isVisible) {
@@ -57,15 +59,13 @@ const KarmaDialogBox = ({
   return (
     <DialogContainer onClick={handleClick}>
       <DialogBox>
-        <SpeakerName>카르마</SpeakerName>
+        <SpeakerName>{t("common.karma")}</SpeakerName>
         <DialogText>
           {displayedText}
           {!isTypingComplete && <Cursor>|</Cursor>}
         </DialogText>
         {isTypingComplete && !autoAdvance && (
-          <ContinueIndicator>
-            ▼ 계속하려면 아무 곳이나 클릭하세요
-          </ContinueIndicator>
+          <ContinueIndicator>▼ {t("intro.nextDialog")}</ContinueIndicator>
         )}
       </DialogBox>
     </DialogContainer>

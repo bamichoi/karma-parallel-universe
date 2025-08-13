@@ -2,16 +2,15 @@ import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import loadingKarmaImage from "../assets/loadingKarma.webp";
 import KarmaDialogBox from "./KarmaDialogBox";
+import { useTranslation } from "react-i18next";
 
 const LoadingComponent = () => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
+  const { t } = useTranslation();
 
-  const loadingMessages = [
-    "분기점을 탐색 중…",
-    "또 다른 평행세계로 진입중…",
-    "또 다른 당신을 추적 중…",
-    "확인. 목표 관측 시작...",
-  ];
+  const loadingMessages = t("loading.karmaDialogs", {
+    returnObjects: true,
+  }) as string[];
 
   const handleMessageComplete = () => {
     if (currentMessageIndex < loadingMessages.length - 1) {
@@ -24,7 +23,7 @@ const LoadingComponent = () => {
   return (
     <LoadingContainer>
       <LoadingContent>
-        <LoadingTitle>평행우주를 탐색하고 있습니다.</LoadingTitle>
+        <LoadingTitle>{t("loading.title")}</LoadingTitle>
         <LoadingKarmaImage src={loadingKarmaImage} alt="Loading Karma" />
         <KarmaDialogBox
           message={loadingMessages[currentMessageIndex]}

@@ -8,6 +8,7 @@ import IntroStep from "./steps/IntroStep";
 import PersonalInfoStep from "./steps/PersonalInfoStep";
 import PastSituationStep from "./steps/PastSituationStep";
 import CompleteStep from "./steps/CompleteStep";
+import { useTranslation } from "react-i18next";
 
 const UniverseForm = () => {
   const [currentStep, setCurrentStep] = useState<FormStep>("intro");
@@ -15,7 +16,7 @@ const UniverseForm = () => {
     new Set()
   );
   const isLoading = useAtomValue(isLoadingAtom);
-
+  const { t } = useTranslation();
   const methods = useForm<UniverseFormData>({
     mode: "onChange",
   });
@@ -67,19 +68,19 @@ const UniverseForm = () => {
               $isActive={currentStep === "personal"}
               $isCompleted={completedSteps.has("personal")}
             >
-              1. 나의 정보
+              1. {t("process.personalInfo")}
             </ProgressStep>
             <ProgressStep
               $isActive={currentStep === "past"}
               $isCompleted={completedSteps.has("past")}
             >
-              2. 과거 상황
+              2. {t("process.pastSituation")}
             </ProgressStep>
             <ProgressStep
               $isActive={currentStep === "complete"}
               $isCompleted={completedSteps.has("complete")}
             >
-              3. 평행우주 진입
+              3. {t("process.complete")}
             </ProgressStep>
           </ProgressBar>
         )}

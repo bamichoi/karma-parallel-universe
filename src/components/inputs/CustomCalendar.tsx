@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 interface CustomCalendarProps {
   selectedDate: string;
@@ -9,15 +10,25 @@ interface CustomCalendarProps {
   maxDate?: string;
 }
 
-const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }: CustomCalendarProps) => {
+const CustomCalendar = ({
+  selectedDate,
+  onDateSelect,
+  isOpen,
+  onClose,
+  maxDate,
+}: CustomCalendarProps) => {
   const [currentDate, setCurrentDate] = useState(new Date());
   const [showYearDropdown, setShowYearDropdown] = useState(false);
   const [showMonthDropdown, setShowMonthDropdown] = useState(false);
   const calendarRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (calendarRef.current && !calendarRef.current.contains(event.target as Node)) {
+      if (
+        calendarRef.current &&
+        !calendarRef.current.contains(event.target as Node)
+      ) {
         onClose();
       }
     };
@@ -68,13 +79,17 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
     return years.reverse();
   };
 
+  const monthNames = t("common.months", { returnObjects: true }) as string[];
+
+  const weekDays = t("common.weekDays", { returnObjects: true }) as string[];
+
   const generateMonthOptions = () => {
     return monthNames.map((name, index) => ({ value: index, label: name }));
   };
 
   const handleDateClick = (day: number) => {
     const date = new Date(year, month, day);
-    
+
     // Check if date is beyond maxDate
     if (maxDate) {
       const maxDateObj = new Date(maxDate);
@@ -82,30 +97,34 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
         return; // Don't allow selection of future dates
       }
     }
-    
+
     // Format date manually to avoid timezone issues
-    const formattedDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const formattedDate = `${year}-${String(month + 1).padStart(
+      2,
+      "0"
+    )}-${String(day).padStart(2, "0")}`;
     onDateSelect(formattedDate);
     onClose();
   };
 
   const isToday = (day: number) => {
     const today = new Date();
-    return today.getFullYear() === year && today.getMonth() === month && today.getDate() === day;
+    return (
+      today.getFullYear() === year &&
+      today.getMonth() === month &&
+      today.getDate() === day
+    );
   };
 
   const isSelected = (day: number) => {
     if (!selectedDate) return false;
     const selected = new Date(selectedDate);
-    return selected.getFullYear() === year && selected.getMonth() === month && selected.getDate() === day;
+    return (
+      selected.getFullYear() === year &&
+      selected.getMonth() === month &&
+      selected.getDate() === day
+    );
   };
-
-  const monthNames = [
-    "1월", "2월", "3월", "4월", "5월", "6월",
-    "7월", "8월", "9월", "10월", "11월", "12월"
-  ];
-
-  const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 
   const isFutureDate = (day: number) => {
     if (!maxDate) return false;
@@ -116,12 +135,12 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
 
   const renderCalendarDays = () => {
     const days = [];
-    
+
     // Empty cells for days before the first day of the month
     for (let i = 0; i < firstDayWeekday; i++) {
       days.push(<EmptyDay key={`empty-${i}`} />);
     }
-    
+
     // Days of the month
     for (let day = 1; day <= daysInMonth; day++) {
       const isFuture = isFutureDate(day);
@@ -138,7 +157,7 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
         </Day>
       );
     }
-    
+
     return days;
   };
 
@@ -149,15 +168,15 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
           <ChevronIcon>◀</ChevronIcon>
         </NavButton>
         <HeaderDropdowns>
-          <DropdownButton 
+          <DropdownButton
             onClick={() => {
               setShowYearDropdown(!showYearDropdown);
               setShowMonthDropdown(false);
             }}
           >
-            {year}년 ▼
+            {t("common.year", { year })} ▼
           </DropdownButton>
-          <DropdownButton 
+          <DropdownButton
             onClick={() => {
               setShowMonthDropdown(!showMonthDropdown);
               setShowYearDropdown(false);
@@ -169,24 +188,24 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
         <NavButton onClick={nextMonth}>
           <ChevronIcon>▶</ChevronIcon>
         </NavButton>
-        
+
         {showYearDropdown && (
           <YearDropdown>
-            {generateYearOptions().map(yearOption => (
+            {generateYearOptions().map((yearOption) => (
               <DropdownItem
                 key={yearOption}
                 onClick={() => setYear(yearOption)}
                 $isSelected={yearOption === year}
               >
-                {yearOption}년
+                {t("common.year", { year: yearOption })}
               </DropdownItem>
             ))}
           </YearDropdown>
         )}
-        
+
         {showMonthDropdown && (
           <MonthDropdown>
-            {generateMonthOptions().map(monthOption => (
+            {generateMonthOptions().map((monthOption) => (
               <DropdownItem
                 key={monthOption.value}
                 onClick={() => setMonth(monthOption.value)}
@@ -198,16 +217,14 @@ const CustomCalendar = ({ selectedDate, onDateSelect, isOpen, onClose, maxDate }
           </MonthDropdown>
         )}
       </CalendarHeader>
-      
+
       <WeekDaysRow>
-        {weekDays.map(day => (
+        {weekDays.map((day) => (
           <WeekDay key={day}>{day}</WeekDay>
         ))}
       </WeekDaysRow>
-      
-      <CalendarGrid>
-        {renderCalendarDays()}
-      </CalendarGrid>
+
+      <CalendarGrid>{renderCalendarDays()}</CalendarGrid>
     </CalendarContainer>
   );
 };
@@ -257,7 +274,7 @@ const ChevronIcon = styled.span`
   color: #8b5cf6;
   font-size: 0.875rem;
   font-weight: 600;
-  
+
   &:hover {
     color: #a78bfa;
   }
@@ -340,8 +357,9 @@ const DropdownItem = styled.div<{ $isSelected: boolean }>`
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: ${props => props.$isSelected ? 'rgba(139, 92, 246, 0.3)' : 'transparent'};
-  
+  background: ${(props) =>
+    props.$isSelected ? "rgba(139, 92, 246, 0.3)" : "transparent"};
+
   &:hover {
     background: rgba(139, 92, 246, 0.4);
     color: #a78bfa;
@@ -351,12 +369,13 @@ const DropdownItem = styled.div<{ $isSelected: boolean }>`
     border-bottom: 1px solid rgba(139, 92, 246, 0.1);
   }
 
-  ${props => props.$isSelected && `
+  ${(props) =>
+    props.$isSelected &&
+    `
     color: #a78bfa;
     font-weight: 600;
   `}
 `;
-
 
 const WeekDaysRow = styled.div`
   display: grid;
@@ -383,29 +402,31 @@ const EmptyDay = styled.div`
   height: 32px;
 `;
 
-const Day = styled.button<{ $isToday: boolean; $isSelected: boolean; $isFuture?: boolean }>`
+const Day = styled.button<{
+  $isToday: boolean;
+  $isSelected: boolean;
+  $isFuture?: boolean;
+}>`
   height: 32px;
   border: none;
-  background: ${props => 
+  background: ${(props) =>
     props.$isFuture
       ? "transparent"
-      : props.$isSelected 
+      : props.$isSelected
       ? "linear-gradient(135deg, #8b5cf6, #7c3aed)"
-      : props.$isToday 
+      : props.$isToday
       ? "rgba(139, 92, 246, 0.2)"
-      : "transparent"
-  };
-  color: ${props => 
+      : "transparent"};
+  color: ${(props) =>
     props.$isFuture
       ? "rgba(148, 163, 184, 0.3)"
-      : props.$isSelected 
+      : props.$isSelected
       ? "#ffffff"
-      : props.$isToday 
+      : props.$isToday
       ? "#8b5cf6"
-      : "#f1f5f9"
-  };
+      : "#f1f5f9"};
   border-radius: 6px;
-  cursor: ${props => props.$isFuture ? "not-allowed" : "pointer"};
+  cursor: ${(props) => (props.$isFuture ? "not-allowed" : "pointer")};
   font-size: 0.875rem;
   font-family: "Noto Serif KR", serif;
   transition: all 0.2s ease;
@@ -414,24 +435,18 @@ const Day = styled.button<{ $isToday: boolean; $isSelected: boolean; $isFuture?:
   justify-content: center;
 
   &:hover {
-    background: ${props => 
-      props.$isFuture 
+    background: ${(props) =>
+      props.$isFuture
         ? "transparent"
-        : props.$isSelected 
+        : props.$isSelected
         ? "linear-gradient(135deg, #7c3aed, #6d28d9)"
-        : "rgba(139, 92, 246, 0.3)"
-    };
-    transform: ${props => 
-      props.$isFuture 
-        ? "none" 
-        : props.$isSelected 
-        ? "none" 
-        : "scale(1.1)"
-    };
+        : "rgba(139, 92, 246, 0.3)"};
+    transform: ${(props) =>
+      props.$isFuture ? "none" : props.$isSelected ? "none" : "scale(1.1)"};
   }
 
   &:active {
-    transform: ${props => props.$isFuture ? "none" : "scale(0.95)"};
+    transform: ${(props) => (props.$isFuture ? "none" : "scale(0.95)")};
   }
 
   &:disabled {

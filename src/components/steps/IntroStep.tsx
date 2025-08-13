@@ -1,14 +1,9 @@
 import { useState, useEffect } from "react";
-import { useAtom, useAtomValue } from "jotai";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 import karmaImage from "../../assets/karma.png";
 import KarmaDialogBox from "../KarmaDialogBox";
-import {
-  SUPPORTED_LANGUAGES,
-  setLanguageAtom,
-  currentLanguageOptionAtom,
-  type Language,
-} from "../../stores/languageStore";
+import { SUPPORTED_LANGUAGES } from "../../types/language";
 
 interface IntroStepProps {
   onStart: () => void;
@@ -18,8 +13,11 @@ const IntroStep = ({ onStart }: IntroStepProps) => {
   const [currentDialogIndex, setCurrentDialogIndex] = useState(0);
   const [showMessages, setShowMessages] = useState(false);
   const [skipGreeting, setSkipGreeting] = useState(false);
-  const [, setLanguage] = useAtom(setLanguageAtom);
-  const currentLanguage = useAtomValue(currentLanguageOptionAtom);
+  const { t, i18n } = useTranslation();
+
+  const currentLanguage =
+    SUPPORTED_LANGUAGES.find((lang) => lang.code === i18n.language) ||
+    SUPPORTED_LANGUAGES[0];
 
   // Load skip setting from localStorage on mount
   useEffect(() => {
@@ -30,13 +28,9 @@ const IntroStep = ({ onStart }: IntroStepProps) => {
     }
   }, []);
 
-  const karmaDialogs = [
-    "어서오세요, 인간이여. 기다리고 있었습니다.\n\n저는 모델 카르마입니다.",
-    "저는 인류가 이해할 수 없는 수준의 초지능 AI 휴머노이드로서\n\n수많은 평행 세계를 동시에 관측할 수 있습니다.",
-    "당신에게는 되돌리고 싶은 선택이 있나요..?",
-    "어딘가의 평행세계에서는 당신과는 다른 선택을 한 또 다른 당신이 살아가고 있죠.",
-    "시간을 거슬러 선택을 번복할 순 없지만\n\n이 카르마가 그 평행세계 속의 당신을 보여드릴게요.",
-  ];
+  const karmaDialogs = t("intro.karmaDialogs", {
+    returnObjects: true,
+  }) as string[];
 
   const handleDialogComplete = () => {
     if (currentDialogIndex < karmaDialogs.length - 1) {
@@ -68,13 +62,9 @@ const IntroStep = ({ onStart }: IntroStepProps) => {
       )}
       {showMessages && (
         <>
-          <MainMessage>바꾸고 싶은 선택이 있나요?</MainMessage>
-          <SubMessage>
-            다른 선택을 한 나는
-            <br />
-            지금 어떻게 살고 있을까요?
-          </SubMessage>
-          <StartButton onClick={onStart}>시작하기</StartButton>
+          <MainMessage>{t("intro.title")}</MainMessage>
+          <SubMessage>{t("intro.description")}</SubMessage>
+          <StartButton onClick={onStart}>{t("intro.start")}</StartButton>
         </>
       )}
 
@@ -86,14 +76,14 @@ const IntroStep = ({ onStart }: IntroStepProps) => {
             checked={skipGreeting}
             onChange={(e) => handleSkipChange(e.target.checked)}
           />
-          <label htmlFor="skipGreeting">인사 생략하기</label>
+          <label htmlFor="skipGreeting">{t("intro.skip")}</label>
         </SkipCheckbox>
 
         <LanguageSelector>
-          <span>Lang</span>
+          <span>lang</span>
           <select
             value={currentLanguage.code}
-            onChange={(e) => setLanguage(e.target.value as Language)}
+            onChange={(e) => i18n.changeLanguage(e.target.value)}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.code} value={lang.code}>
@@ -136,6 +126,7 @@ const SubMessage = styled.p`
   line-height: 1.6;
   margin-bottom: 3rem;
   opacity: 0.9;
+  white-space: pre-line;
 `;
 
 const StartButton = styled.button`

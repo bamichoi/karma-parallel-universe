@@ -9,6 +9,7 @@ import { parseSimulationResponse } from "../../utils/parseSimulationResponse";
 import SummaryCard from "../SummaryCard";
 import InfoItem from "../InfoItem";
 import LoadingComponent from "../LoadingComponent";
+import { useTranslation } from "react-i18next";
 
 interface CompleteStepProps {
   onPrev: () => void;
@@ -21,6 +22,7 @@ const CompleteStep = ({ onPrev }: CompleteStepProps) => {
   const setSimulationResult = useSetAtom(simulationResultAtom);
   const setIsLoading = useSetAtom(isLoadingAtom);
   const isLoading = useAtomValue(isLoadingAtom);
+  const { t } = useTranslation();
 
   const onSubmit = async (data: UniverseFormData) => {
     try {
@@ -43,11 +45,9 @@ const CompleteStep = ({ onPrev }: CompleteStepProps) => {
   const formatGender = (gender: string) => {
     switch (gender) {
       case "male":
-        return "남성";
+        return t("form.genderOptions.male");
       case "female":
-        return "여성";
-      case "other":
-        return "기타";
+        return t("form.genderOptions.female");
       default:
         return gender;
     }
@@ -59,28 +59,43 @@ const CompleteStep = ({ onPrev }: CompleteStepProps) => {
 
   return (
     <StepContainer>
-      <Title>✨ 입력 정보 확인</Title>
+      <Title>{t("complete.title")}</Title>
 
-      <SummaryCard title="나의 정보">
-        <InfoItem label="생년월일" value={formData.birthDate} />
-        <InfoItem label="성별" value={formatGender(formData.gender)} />
-        <InfoItem label="현재 거주지" value={formData.currentLocation} />
-        <InfoItem label="현재 직업" value={formData.currentJob} />
-        <InfoItem label="현재의 모습" value={formData.currentSelf} />
+      <SummaryCard title={t("process.personalInfo")}>
+        <InfoItem label={t("form.birthday")} value={formData.birthDate} />
+        <InfoItem
+          label={t("form.gender")}
+          value={formatGender(formData.gender)}
+        />
+        <InfoItem
+          label={t("form.currentLocation")}
+          value={formData.currentLocation}
+        />
+        <InfoItem label={t("form.currentJob")} value={formData.currentJob} />
+        <InfoItem
+          label={t("complete.currentSelf")}
+          value={formData.currentSelf}
+        />
       </SummaryCard>
 
-      <SummaryCard title="과거 상황">
-        <InfoItem label="시기" value={`${formData.year}년`} />
-        <InfoItem label="당시의 선택" value={formData.pastChoice} />
-        <InfoItem label="바꾸고 싶은 내용" value={formData.desiredChange} />
+      <SummaryCard title={t("process.pastSituation")}>
+        <InfoItem label={t("complete.year")} value={`${formData.year}년`} />
+        <InfoItem
+          label={t("complete.pastChoice")}
+          value={formData.pastChoice}
+        />
+        <InfoItem
+          label={t("complete.desiredChange")}
+          value={formData.desiredChange}
+        />
       </SummaryCard>
 
       <ButtonContainer>
         <Button type="button" onClick={onPrev} $variant="secondary">
-          수정
+          {t("complete.modify")}
         </Button>
         <Button type="button" onClick={handleSubmit(onSubmit)}>
-          카르마와 평행우주 진입
+          {t("complete.submit")}
         </Button>
       </ButtonContainer>
     </StepContainer>

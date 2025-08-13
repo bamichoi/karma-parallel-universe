@@ -1,6 +1,7 @@
 import { useFormContext } from "react-hook-form";
 import styled from "styled-components";
 import type { UniverseFormData } from "../../types/form";
+import { useTranslation } from "react-i18next";
 
 interface NumberInputProps {
   name: keyof UniverseFormData;
@@ -29,6 +30,7 @@ const NumberInput = ({
     register,
     formState: { errors },
   } = useFormContext<UniverseFormData>();
+  const { t } = useTranslation();
 
   const fieldId = id || name.toString();
   const error = errors[name];
@@ -44,17 +46,17 @@ const NumberInput = ({
         max={max}
         autoComplete="off"
         {...register(name, {
-          required: required ? `${label}을 입력해주세요` : false,
+          required: required ? t("error.requiredFill", { label }) : false,
           min: min
             ? {
                 value: min,
-                message: minMessage || `${min} 이상의 값을 입력해주세요`,
+                message: minMessage || t("error.min", { min }),
               }
             : undefined,
           max: max
             ? {
                 value: max,
-                message: maxMessage || `${max} 이하의 값을 입력해주세요`,
+                message: maxMessage || t("error.max", { max }),
               }
             : undefined,
           valueAsNumber: true,

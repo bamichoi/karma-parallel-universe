@@ -5,10 +5,12 @@ import styled from "styled-components";
 import { simulationResultAtom } from "../stores/resultStore";
 import TimelineProgressBar from "../components/TimelineProgressBar";
 import ResultContent from "../components/ResultContent";
+import { useTranslation } from "react-i18next";
 
 const ResultPage = () => {
   const navigate = useNavigate();
   const result = useAtomValue(simulationResultAtom);
+  const { t } = useTranslation();
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -49,9 +51,7 @@ const ResultPage = () => {
 
           {/* Fixed Title */}
           <FixedTitle>
-            {!isLastItem && currentItem
-              ? currentItem.title
-              : "평행우주의 나로부터 온 메시지"}
+            {!isLastItem && currentItem ? currentItem.title : t("result.title")}
           </FixedTitle>
         </FixedHeader>
 
@@ -63,13 +63,13 @@ const ResultPage = () => {
         >
           <ButtonContainer>
             {currentIndex > 0 && (
-              <PrevButton onClick={handlePrev}>이전</PrevButton>
+              <PrevButton onClick={handlePrev}>{t("form.previous")}</PrevButton>
             )}
             {!isLastItem ? (
-              <NextButton onClick={handleNext}>다음</NextButton>
+              <NextButton onClick={handleNext}>{t("form.next")}</NextButton>
             ) : (
               <RestartButton onClick={handleRestart}>
-                다시 시작하기
+                {t("result.restart")}
               </RestartButton>
             )}
           </ButtonContainer>

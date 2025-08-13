@@ -1,0 +1,21 @@
+{
+  "welcome": "Benvenuti nell'Universo Parallelo di Karma",
+  "intro": {
+    "greeting": "Ciao! Sono Karma, la tua guida per esplorare il tuo destino.",
+    "description": "Curioso di come scelte passate diverse avrebbero potuto cambiare il tuo presente?",
+    "instruction": "Inserisci le tue informazioni e decisioni passate, e ti mostrerò le timeline dell'universo parallelo!"
+  },
+  "form": {
+    "personalInfo": "Informazioni Personali",
+    "pastSituation": "Situazione Passata",
+    "complete": "Completo",
+    "next": "Avanti",
+    "previous": "Indietro",
+    "submit": "Invia"
+  },
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "retry": "Riprova"
+  }
+}

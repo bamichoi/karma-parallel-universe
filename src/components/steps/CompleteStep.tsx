@@ -22,13 +22,33 @@ const CompleteStep = ({ onPrev }: CompleteStepProps) => {
   const setSimulationResult = useSetAtom(simulationResultAtom);
   const setIsLoading = useSetAtom(isLoadingAtom);
   const isLoading = useAtomValue(isLoadingAtom);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const getLanguageName = (langCode: string): string => {
+    const languageMap: Record<string, string> = {
+      ko: "korean",
+      en: "english",
+      ja: "japanese",
+      zh: "chinese",
+      it: "italian",
+      es: "spanish",
+      fr: "french",
+      vi: "vietnamese",
+    };
+    return languageMap[langCode] || "Korean";
+  };
 
   const onSubmit = async (data: UniverseFormData) => {
     try {
       setIsLoading(true);
 
-      const response = await requestSimulate(data);
+      // Add current language to form data
+      const dataWithLang = {
+        ...data,
+        lang: getLanguageName(i18n.language || "ko"),
+      };
+
+      const response = await requestSimulate(dataWithLang);
 
       // Parse the API response to get simulation result
       const result = parseSimulationResponse(response);

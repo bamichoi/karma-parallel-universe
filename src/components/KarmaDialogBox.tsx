@@ -129,7 +129,8 @@ const DialogText = styled.p`
   line-height: 1.6;
   margin: 0;
   min-height: 1.6em;
-  word-break: keep-all;
+  word-break: break-word;
+  overflow-wrap: break-word;
   text-align: left;
 `;
 

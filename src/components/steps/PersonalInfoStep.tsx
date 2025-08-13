@@ -14,8 +14,12 @@ interface PersonalInfoStepProps {
 }
 
 const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
-  const { watch, setValue } = useFormContext<UniverseFormData>();
-
+  const {
+    watch,
+    setValue,
+    formState: { isValid },
+  } = useFormContext<UniverseFormData>();
+  console.log(isValid);
   // Load data from localStorage on component mount
   useEffect(() => {
     const savedData = localStorage.getItem("universeFormData");
@@ -60,18 +64,6 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
     allFormData.currentJob,
     allFormData.currentSelf,
   ]);
-
-  const watchedFields = watch([
-    "birthDate",
-    "gender",
-    "currentLocation",
-    "currentJob",
-    "currentSelf",
-  ]);
-
-  const isFormValid = watchedFields.every(
-    (field) => field && field.toString().trim() !== ""
-  );
 
   return (
     <StepContainer>
@@ -128,7 +120,7 @@ const PersonalInfoStep = ({ onNext }: PersonalInfoStepProps) => {
         id="saveData"
       />
 
-      <Button type="button" onClick={onNext} disabled={!isFormValid}>
+      <Button type="button" onClick={onNext} disabled={!isValid}>
         다음 단계
       </Button>
     </StepContainer>

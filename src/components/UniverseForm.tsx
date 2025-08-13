@@ -16,7 +16,9 @@ const UniverseForm = () => {
   );
   const isLoading = useAtomValue(isLoadingAtom);
 
-  const methods = useForm<UniverseFormData>();
+  const methods = useForm<UniverseFormData>({
+    mode: "onBlur",
+  });
 
   const nextStep = () => {
     if (currentStep === "intro") {

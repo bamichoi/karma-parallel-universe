@@ -10,14 +10,9 @@ interface PastSituationStepProps {
 }
 
 const PastSituationStep = ({ onNext, onPrev }: PastSituationStepProps) => {
-  const { watch } = useFormContext<UniverseFormData>();
-
-  const watchedFields = watch(["year", "pastChoice", "desiredChange"]);
-
-  const isFormValid = watchedFields.every((field) => {
-    if (typeof field === "number") return field > 0;
-    return field && field.toString().trim() !== "";
-  });
+  const {
+    formState: { isValid },
+  } = useFormContext<UniverseFormData>();
 
   const currentYear = new Date().getFullYear();
 
@@ -59,7 +54,7 @@ const PastSituationStep = ({ onNext, onPrev }: PastSituationStepProps) => {
         <Button type="button" onClick={onPrev} $variant="secondary">
           이전
         </Button>
-        <Button type="button" onClick={onNext} disabled={!isFormValid}>
+        <Button type="button" onClick={onNext} disabled={!isValid}>
           다음
         </Button>
       </ButtonContainer>
